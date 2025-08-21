@@ -17,7 +17,7 @@ This repository provides data preparation, training scripts, and an ensemble-mod
 **Notation:**  
 - Folder names end with `/`  
 - Descriptions follow a dash `-`
-
+**Structure**
 - **ITMO/** — Data preparation and training.
 - **ENSEMBLE_model/** — Ensemble models, runner notebook, and test data package.
 - **Experimental_Results/** — Organized outputs, overlays, comparisons, and CSV files.
