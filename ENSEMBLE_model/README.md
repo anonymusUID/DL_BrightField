@@ -1,5 +1,8 @@
 # ENSEMBLE_model
 
+## Purpose
+This directory contains all resources needed to run the ensemble-based cell segmentation pipeline.
+
 ## Contents
 - **models/** — 14 pretrained models used in the ensemble.
 - **TEST_DATA/**
