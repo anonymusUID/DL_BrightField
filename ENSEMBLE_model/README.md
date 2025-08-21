@@ -8,7 +8,7 @@
   - **LIVECELL_img_msk.zip** — Unzip to obtain:
     - `LIVECELL_img/`
     - `LIVECELL_msk/`
-- **RUNNER.ipynb** — Colab-friendly notebook for ensemble inference.
+- **RUNNER.ipynb** — Colab-notebook for running ensemble model.
 - **customfunc.py** — Utility functions used by the runner.
 
 ## NOTE: 
