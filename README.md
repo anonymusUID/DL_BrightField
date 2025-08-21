@@ -1,81 +1,48 @@
-# Brightfield Microscopy Segmentation
+# Brightfield Microscopy Segmentation — LIVECell
 
 ## Overview
-This repository provides scripts, models, and results for segmenting live-cell images captured using brightfield microscopy. It includes data preparation pipelines, model training scripts, and an ensemble-based inference framework evaluated on a test set and the full LIVECell dataset (~3,000 images).
+This repository provides data preparation, training scripts, and an ensemble-based inference pipeline for segmenting live-cell brightfield images. It includes a 10-image test set and evaluation on the full LIVECell dataset (~3,000 images).
 
 ---
 
-## Repository Usage
-1. **Clone or download** this repository.
-2. Upload the following main directories to "MyDrive" in your Google Drive:
+## How to Use (Colab + Google Drive)
+1. **Download/clone** this repository.
+2. **Upload the three top-level folders** to your Google Drive (e.g., `MyDrive/brightfield_seg/`):
    - `ITMO/`
    - `ENSEMBLE_model/`
    - `Experimental_Results/`
-3. Follow the respective sections below for training or inference.
+3. In Google Colab:
+   - Mount Drive and set your base path (e.g., `BASE_DIR = "/content/drive/MyDrive/brightfield_seg"`).
+   - Follow **Model Training** or **Ensemble Inference** as needed.
 
 ---
 
-## Directory Structure
+## Workflows
 
-### `Experimental_Results`
-Contains segmentation outputs and overlays.
+### A) Model Training (optional)
+- Use `ITMO/03_DataPrep/` to generate augmentations and `.npy` files.
+- Source data layout:
+  - `ITMO/01_BRIGHT_FIELD/original_img/` and `original_msk/`
+  - Generate `augmented_img/`, `augmented_msk/`, and `857x21/` (`.npy`).
+- Train using notebooks/scripts in `ITMO/02_Bright_Field/`.
+- Trained models are saved to `ITMO/008_OUTPUT/`.
 
-- **10_Lab** – Results for 10 test images.
-- **LIVECELL** – Results for the full LIVECell dataset.
-  - `LIVECELL_outputs_overlays.zip`  
-    - Extracts into:  
-      - `LIVECELL_outputs/` – Model predictions.  
-      - `LIVECELL_overlays/` – Overlays of predictions on original images.  
-  - `LIVECELL/` – Contains zipped dataset outputs and overlays.
-
----
-
-### `ITMO`
-Contains scripts and intermediate outputs for **data preparation and model training**.
-
-- **008_OUTPUT/** – Trained model files.
-- **03_DataPrep/** – Scripts for augmentation and `.npy` generation.
-- **01_BRIGHT_FIELD/**  
-  - `original_msk/` – Original masks.  
-  - `original_img/` – Original images.  
-  - `augmented_msk/` – To be generated.  
-  - `augmented_img/` – To be generated.  
-- **857x21/** – `.npy` files (to be generated).  
-- **02_bright_field/** – Model training and evaluation scripts.
+### B) Ensemble Inference (recommended for quick evaluation)
+- Pretrained models are provided in `ENSEMBLE_model/models/`.
+- Open `ENSEMBLE_model/RUNNER.ipynb` in Colab and run cells.
+- Test data:
+  - `ENSEMBLE_model/TEST_DATA/10_Lab_img/` and `10_Lab_msk/`
+  - `ENSEMBLE_model/TEST_DATA/LIVECELL_img_msk.zip` → unzip to:
+    - `LIVECELL_img/`, `LIVECELL_msk/`
+- Inference outputs and overlays can be compared with `Experimental_Results/`.
 
 ---
 
-### `ENSEMBLE_model`
-Contains resources for **ensemble inference**.
+## Directory Summary
+- **ITMO/** — Data prep and training.
+- **ENSEMBLE_model/** — Ensemble models, runner notebook, and test data package.
+- **Experimental_Results/** — Organized outputs, overlays, comparisons, and CSV summaries.
 
-- **models/** – 14 pre-trained models used in the ensemble.
-- **TEST_DATA/**  
-  - Contains:
-    - `10_test/` – 10 test images.  
-    - `LIVECELL_dataset.zip` – Extracts into:
-      - `LIVECELL_img/` – LIVECell images.  
-      - `LIVECELL_msk/` – LIVECell masks.  
-  - `RUNNER.ipynb` – Script to run ensemble inference.
+See subdirectory READMEs for details.
 
----
-
-## Workflow
-
-### **1. Model Training**
-- Prepare data using scripts in `ITMO/03_DataPrep/`.
-- Generate augmented images and masks in `01_BRIGHT_FIELD/`.
-- Generate `.npy` files in `857x21/`.
-- Train models using scripts in `02_bright_field/`.
-- Trained models are saved in `008_OUTPUT/`.
-
-### **2. Ensemble Inference**
-- Use pre-trained models from `ENSEMBLE_model/models/`.
-- Run inference using `ENSEMBLE_model/TEST_DATA/RUNNER.ipynb`.
-- Outputs and overlays are saved in `Experimental_Results/`.
-
----
-
-## Notes
-- Augmented datasets and `.npy` files must be generated before training.
-- LIVECELL dataset and their respective outputs have been provided in zip format.
 ---
