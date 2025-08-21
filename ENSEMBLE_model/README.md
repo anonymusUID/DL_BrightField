@@ -13,6 +13,3 @@ This directory contains all resources needed to run the ensemble-based cell segm
     - `LIVECELL_msk/`
 - **RUNNER.ipynb** — Colab-notebook for running ensemble model.
 - **customfunc.py** — Utility functions used by the runner.
-
-## NOTE: 
-1. Ensure this folder is in Google Drive (e.g., `MyDrive/ENSEMBLE_model`).
