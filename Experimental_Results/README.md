@@ -10,6 +10,16 @@
 - **Comparision_with_other_models/** — Visual comparisons.
 - **10_Lab_results.csv** — Metrics for the 10-image set.
 
+### Comparision_with_other_models
+
+- **10_Lab_img/** — Input images for comparison.  
+- **10_Lab_msk/** — Ground truth masks for comparison.  
+- **csv_results/** — Metrics for the model in csv.  
+- **SSL_scripts/** — Supporting scripts for running SSL model.  
+- **CellPose_Stardist.ipynb** — Runs CellPose-SAM, CellPose3 and StarDist.  
+- **evalRes.ipynb** — Evaluates metrics across models.  
+- **SSL.ipynb** — Runs SSL model and saves output.  
+
 ### LIVECELL
 
 - **LIVECELL_Outputs_Overlay.zip** — Zip bundle containing:
