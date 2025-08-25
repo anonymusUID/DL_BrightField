@@ -7,7 +7,7 @@
 - **Ground_Truth/** — Corresponding masks.
 - **Outputs/** — Outputs for the 10 test images by our Model.
 - **Overlays/** — Predicted masks overlaid on inputs.
-- **Comparision_with_other_models/** — Visual comparisons.
+- **Overlay_comparisions/** — Overlayed predictions from different models for visual comparison.
 - **10_Lab_results.csv** — Metrics for the 10-image set.
 
 ### Comparision_with_other_models
