@@ -21,7 +21,7 @@ This repository provides data preparation, training scripts, and an ensemble-mod
 **Structure:**
 - **ITMO/** — Data preparation and training.
 - **ENSEMBLE_model/** — Ensemble model, runner notebook, and test data package.
-- **Experimental_Results/** — Organized outputs, overlays, comparisons, and CSV files.
+- **Experimental_Results/** — Organized outputs, overlays, comparisons, CSVs, and scripts for generating results with other models (CellPose, StarDist,SSL).
 
 See subdirectory READMEs for details.
 
