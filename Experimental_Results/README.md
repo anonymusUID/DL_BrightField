@@ -5,7 +5,7 @@
 ### 10_Lab
 - **Inputs/** — 10 test images.
 - **Ground_Truth/** — Corresponding masks.
-- **Outputs/** — Outputs for the 10 test images.
+- **Outputs/** — Outputs for the 10 test images by our Model.
 - **Overlays/** — Predicted masks overlaid on inputs.
 - **Comparision_with_other_models/** — Visual comparisons.
 - **10_Lab_results.csv** — Metrics for the 10-image set.
